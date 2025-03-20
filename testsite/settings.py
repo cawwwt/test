@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'testapp.apps.TestappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,14 @@ WSGI_APPLICATION = 'testsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mssql',
+        'NAME': 'test_db',
+        'HOST': r'hopya\SQLEXPRESS',
+        'PORT': '1433',
+        'USER': 'kani',
+        'PASSWORD': 'Pancake_2001',
+        'OPTIONS': {'driver': 'ODBC Driver 17 for SQL Server'},
+
     }
 }
 
